@@ -11,57 +11,111 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
         }
 
         .navbar {
-            background-color: #333;
+            background: linear-gradient(to right, #18BC9C, #2C3E50);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .navbar-brand, .nav-link {
-            color: #fff !important;
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFFFFF !important;
+        }
+
+        .nav-link {
+            color: #FFFFFF !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #18BC9C !important;
         }
 
         .hero {
             height: 100vh;
-            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
 
-        .section-title {
-            margin-bottom: 1.5rem;
-            color: #444;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
         .btn-primary {
-            background-color: #0066FF;
+            background-color: #18BC9C;
             border: none;
         }
 
         .btn-primary:hover {
-            background-color: #0056CC;
+            background-color: #138D75;
+        }
+
+        #scrollToTop {
+            background-color: #18BC9C;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        #scrollToTop:hover {
+            background-color: #138D75;
         }
 
         .card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            color: #18BC9C;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #555555;
+        }
+
+        footer {
+            background: linear-gradient(to right, #18BC9C, #2C3E50);
+        }
+
+        footer p {
+            margin: 0;
+            padding: 1rem;
+            color: #FFFFFF;
+        }
+
+        .offset-anchor {
+            display: block;
+            position: relative;
+            top: -80px; /* Adjust based on your navbar height */
+            visibility: hidden;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">A Fleur de Pierre</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +147,7 @@
     <div class="container">
         <h1 class="display-4">Bienvenue à l'Atelier A Fleur de Pierre</h1>
         <p class="lead">Un lieu où la tradition rencontre l'art moderne.</p>
-        <a href="#lithography" class="btn btn-primary btn-lg">Découvrir</a>
+        <a href="#lithography" class="home-button btn btn-primary btn-lg">Découvrir</a>
     </div>
 </section>
 
@@ -192,10 +246,62 @@
     </div>
 </section>
 
-<footer class="py-3 text-center bg-dark text-white">
-    <p>&copy; 2024 Atelier A Fleur de Pierre. Tous droits réservés.</p>
+<footer class="py-3 text-center">
+    <p>&copy; Atelier A Fleur de Pierre, 17, rue de Nantes 75019 Paris tel : 01 40 36 52 52 fax : 01 40 36 53 56 - email : artlitho@club-internet.fr</p>
 </footer>
 
+<a href="#" id="scrollToTop" class="btn btn-primary btn-lg position-fixed bottom-0 end-0 m-4">⇧</a>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Show the scroll to top button when scrolling down
+    window.addEventListener('scroll', function() {
+        const scrollToTop = document.getElementById('scrollToTop');
+        if (window.scrollY > 300) {
+            scrollToTop.style.display = 'flex';
+        } else {
+            scrollToTop.style.display = 'none';
+        }
+    });
+
+    // Smooth scroll with animation
+    document.getElementById('scrollToTop').addEventListener('click', function(e) {
+        e.preventDefault();
+        const duration = 700;
+        const startPosition = window.scrollY;
+        const startTime = performance.now();
+
+        function scrollStep(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = progress < 0.5 ? 4 * progress ** 3 : 1 - (-2 * progress + 2) ** 3 / 2;
+            window.scrollTo(0, startPosition * (1 - ease));
+            if (progress < 1) requestAnimationFrame(scrollStep);
+        }
+
+        requestAnimationFrame(scrollStep);
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const offset = targetElement.offsetTop - navbarHeight;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+        });
+    });
+    document.querySelectorAll('.home-button').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const offset = targetElement.offsetTop - navbarHeight;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+        });
+    });
+
+</script>
 </body>
 </html>
