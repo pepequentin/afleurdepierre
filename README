@@ -1,11 +1,97 @@
-Chose à faire:
-1. Ajouter les images dans les placeholders
-    a. Nouvelles images récup par lolo
-    b. Ancienne image du site "http://afleurdepierre.fr/"
-2. Changer les typographies des textes
-3. Ajouter des animations
-4. Rendre le style plus "friendly"
-5. Capu tu dois modifier le code partie par partie
-6. Modifier le style du footer car il est vrmt degeu
-7. Menu collapse nest pas du tout élégant
-8. Intégrer la donnée de lancien site au nouveau
+# Atelier A Fleur de Pierre - Site Web Modernisé
+
+Ce projet vise à moderniser et améliorer le site web de l'atelier A Fleur de Pierre tout en intégrant les données existantes et en adoptant un design plus convivial et attractif.
+
+---
+
+## Objectifs
+
+1. **Modernisation du design**
+   - Utiliser des technologies modernes comme Bootstrap 5.
+   - Ajouter des animations pour rendre l'expérience utilisateur fluide et engageante.
+
+2. **Intégration des données**
+   - Récupérer et intégrer les données pertinentes de l'ancien site web : [http://afleurdepierre.fr/](http://afleurdepierre.fr/).
+
+3. **Optimisation de l'expérience utilisateur**
+   - Rendre le site responsive.
+   - Assurer une navigation fluide avec des transitions "smooth" et un menu fixe non intrusif.
+
+---
+
+## Tâches à réaliser
+
+### 1. Ajout des images
+- **Placeholder à remplacer :**
+  - Nouvelles images fournies par l'équipe (Lolo).
+  - Anciennes images récupérées depuis l'ancien site web.
+
+### 2. Modification des typographies
+- Choisir une typographie plus moderne et conviviale.
+- Intégrer Google Fonts pour améliorer la lisibilité et le design.
+
+### 3. Ajout d'animations
+- **Animations à implémenter :**
+  - Animation des cartes sur hover (agrandissement, ombre).
+  - Transition fluide lors de la navigation entre les sections.
+  - Apparition progressive des sections lors du défilement (scroll reveal).
+
+### 4. Amélioration du style
+- Rendre le site "friendly" avec des couleurs plus vives et harmonieuses.
+- Ajouter des icônes et éléments visuels pour guider les utilisateurs.
+
+### 5. Amélioration du menu
+- Revoir le design du menu collapsible pour qu'il soit plus élégant et moderne.
+- Assurer que le menu reste fonctionnel et esthétique sur mobile.
+
+### 6. Modification du footer
+- Revoir le design du footer pour qu'il soit en harmonie avec le reste du site.
+- Ajouter des liens vers les réseaux sociaux et une section "Contact rapide".
+
+---
+
+## Structure du projet
+
+### Dossiers
+- **images/** : Contient toutes les images utilisées sur le site.
+- **css/** : Contient les fichiers CSS personnalisés.
+- **js/** : Contient les fichiers JavaScript.
+- **index.html** : Page principale du site.
+
+### Fichiers clés
+- `styles.css` : Feuille de style personnalisée.
+- `main.js` : Scripts JavaScript pour les animations et interactions.
+
+---
+
+## Suggestions d'améliorations futures
+
+1. **Optimisation des performances**
+   - Compresser les images.
+   - Minifier les fichiers CSS et JavaScript.
+
+2. **Accessibilité**
+   - Ajouter des descriptions pour les images.
+   - S'assurer que le site est compatible avec les lecteurs d'écran.
+
+3. **SEO**
+   - Ajouter des balises meta pour améliorer le référencement.
+   - Utiliser des descriptions détaillées et des mots-clés pertinents.
+
+4. **Fonctionnalités supplémentaires**
+   - Ajouter une galerie d'images interactive.
+   - Intégrer un blog ou une section "Actualités" dynamique.
+
+---
+
+## Instructions pour les contributeurs
+
+1. Travailler sur une branche dédiée pour chaque tâche.
+2. Soumettre une pull request avec des détails sur les modifications.
+3. Vérifier les modifications sur différents navigateurs et appareils avant de les fusionner.
+
+---
+
+## Contact
+Pour toute question ou contribution, veuillez contacter l'équipe à [NONE].
+
