@@ -87,14 +87,19 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.btn-scrolltotop:hover {
+    background-color: #138D75;
+    transform: translateY(-3px);
+}
+
 #scrollToTop {
-    background-color: #18BC9C;
-    color: #FFFFFF;
+    background-color: #18BC9C; /* Couleur du fond du bouton */
+    color: #FFFFFF; /* Couleur du texte */
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Pour faire une forme ronde */
     width: 50px;
     height: 50px;
-    display: none;
+    display: none; /* Le bouton est caché par défaut */
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
@@ -104,7 +109,7 @@ body {
 }
 
 #scrollToTop:hover {
-    background-color: #138D75;
+    background-color: #138D75; /* Couleur du bouton au survol */
     transform: rotate(360deg);
 }
 

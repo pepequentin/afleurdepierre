@@ -7,6 +7,8 @@
     <title>Atelier A Fleur de Pierre</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -42,8 +44,8 @@
 
 <section id="home" class="hero">
     <div class="container">
-        <h1 class="display-4 animate__animated animate__fadeInDown">Bienvenue à l'Atelier A Fleur de Pierre</h1>
-        <p class="lead animate__animated animate__fadeInUp">Un lieu où la tradition rencontre l'art moderne.</p>
+        <h1 class="display-4">Bienvenue à l'Atelier A Fleur de Pierre</h1>
+        <p class="lead">Un lieu où la tradition rencontre l'art moderne.</p>
         <a href="#lithography" class="home-button btn btn-primary btn-lg animate__animated animate__bounceIn">Découvrir</a>
     </div>
 </section>
@@ -52,7 +54,7 @@
     <div class="container">
         <h2 class="section-title">Réalisation d'une lithographie</h2>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-left" data-aos-delay="100">
                 <div class="card">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Grainage">
                     <div class="card-body">
@@ -61,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-left" data-aos-delay="300">
                 <div class="card">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Dessin">
                     <div class="card-body">
@@ -70,12 +72,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-left" data-aos-delay="500">
                 <div class="card">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Tirage">
                     <div class="card-body">
                         <h5 class="card-title">Tirage</h5>
-                        <p class="card-text">Le tirage final réalise la vision de l'artiste.</p>
+                        <p class="card-text">Le tirage final réalise la vision de l'artiste.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -95,7 +98,7 @@
         <h2 class="section-title">Les artistes</h2>
         <div class="row">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" data-aos="fade-left" data-aos-delay="100">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Artist">
                     <div class="card-body">
                         <h5 class="card-title">Brian Maguire</h5>
@@ -104,7 +107,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" data-aos="fade-left" data-aos-delay="100">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Artist">
                     <div class="card-body">
                         <h5 class="card-title">Laurence Lépron</h5>
@@ -147,9 +150,12 @@
     <p>&copy; Atelier A Fleur de Pierre, 17, rue de Nantes 75019 Paris tel : 01 40 36 52 52 fax : 01 40 36 53 56 - email : artlitho@club-internet.fr</p>
 </footer>
 
-<a href="#" id="scrollToTop" class="btn btn-primary btn-lg position-fixed bottom-0 end-0 m-4">⇧</a>
+<a href="#" id="scrollToTop" class="btn btn-scrolltotop btn-lg position-fixed bottom-0 end-0 m-4">⇧</a>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>
