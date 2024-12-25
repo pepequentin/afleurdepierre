@@ -41,7 +41,6 @@ window.addEventListener('scroll', function() {
 // Fonction de défilement fluide vers le haut de la page
 document.getElementById('scrollToTop').addEventListener('click', function(e) {
     e.preventDefault();
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
     smoothScroll({ offsetTop: 0 }, 1000); // 1000 ms = 1 seconde pour le défilement
 });
 
