@@ -8,16 +8,16 @@ body {
     overflow-x: hidden;
 }
 
+/* Style de la navbar */
 .navbar {
-    background: linear-gradient(to right, #18BC9C, #2C3E50);
+    background: linear-gradient(to right, #18BC9C, #2C3E50); /* Garder ta couleur de fond */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background 0.5s ease;
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    letter-spacing: 3px;
     color: #FFFFFF !important;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -25,15 +25,110 @@ body {
     color: #18BC9C !important;
 }
 
-.nav-link {
+/* Style du bouton hamburger */
+.navbar-toggler {
+    border: none !important; /* Retirer la bordure par défaut */
+    box-shadow: none !important; /* Retirer l'ombre par défaut */
+}
+
+/* Supprimer l'ombre et la bordure lors du survol quand la navbar est en mode "collapsed" */
+.navbar-toggler:hover {
+    border: none; /* Pas de bordure lors du hover */
+    box-shadow: none; /* Pas d'ombre lors du hover */
+    transform: scale(1.1);
+}
+
+.fa-bars:hover {
+    transform: scale(1.1);
+}
+
+/* Retirer l'ombre et la bordure dans l'état collapse */
+.navbar-toggler.collapsed {
+    border: none; /* Pas de bordure */
+    box-shadow: none; /* Pas d'ombre */
+}
+
+.navbar-toggler-icon {
+    background-color: #FFFFFF;
+}
+
+.navbar-nav .nav-link {
     color: #FFFFFF !important;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #18BC9C !important;
     transform: scale(1.1);
+}
+
+.navbar-nav.ms-auto {
+    margin-left: auto;
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+    color: #FFFFFF;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+    color: #FFFFFF;
+}
+
+/* Boutons et icônes de la navbar */
+.navbar-nav.flex-row .nav-item .nav-link {
+    padding: 0.75rem 1rem;
+}
+
+.navbar-nav.flex-row .nav-item .nav-link i {
+    font-size: 1.25rem;
+    color: #FFFFFF;
+}
+
+.navbar-nav.flex-row .nav-item .nav-link:hover i {
+    color: #18BC9C;
+}
+
+/* Modifier l'apparence au survol de la navbar */
+.navbar-scrolled {
+    background: linear-gradient(to right, #18BC9C, #2C3E50); /* Garder le fond au scroll */
+}
+
+/* Animation Flip pour l'ouverture et la fermeture */
+@keyframes flipDown {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes flipUp {
+    0% {
+        transform: rotateX(180deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+/* Appliquer l'animation de flip au bouton de la navbar */
+.navbar-toggler.collapsed {
+    animation: flipUp 0.5s forwards; /* Animation Flip up lors de la fermeture */
+}
+
+.navbar-toggler:not(.collapsed) {
+    animation: flipDown 0.5s forwards; /* Animation Flip down lors de l'ouverture */
+}
+
+/* Animation de défilement */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
 }
 
 .hero {
